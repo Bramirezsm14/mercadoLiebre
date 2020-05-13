@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head', {title: 'Editar'}) %>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="/stylesheets/estilo.css">
+    <title>Product-Edit</title>
+</head>
+<body>
+    <!--header-->
+    <%-include('partials/header')  %> 
+    <!--header-->
+    <h1>Producto a editar :<%=produName%></h1>
+    
+    
+    <form action="/products/edit/<%=produId%>?_method=PUT"  method="post" style="display:flex;flex-wrap:wrap;flex-direction: column;  width: 30%; ;">
+        <label style="font-size: 20px; " for="nombre" ></label>
+        <br>
+       <input type="text" name="name" id="nombre" placeholder="Nombre">
+        <br>
+        <label style="font-size: 20px;" for="descripcion"></label>
+        <br>
+        <input type="text" name="description" id="descripcion" placeholder="Descripcion">
+        <br>
+        <label  style="font-size: 20px;" for="precio"></label>
+        <br>
+        <input type="text" name="price" id="precio" placeholder="Precio">
+        <br>
+        <label style="font-size: 20px;" for="descuento"></label>
+        <br>
+        <input type="text" name="discount" id="descuento" placeholder="Descuento">
+        <br>
+        <label style="font-size: 20px;" for="categoria"></label>
+        <br>
+        <input type="text" name="category" id="categoria" placeholder="Categoria">
+        <br>
+        <button type="submit">Modificar</button>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Detalle de producto'}) %>
+<body>
+	<!-- Header -->
+	<%- include('partials/header') %>
+	<!-- /Header -->
+
+	<!-- product detail -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title " style = "font-size:28px;">Detalle del producto:<%=namePro%> </h2>
+			</div>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<div class="col-12 col-lg-8"">
+					<img src="/images/products/<%=imagenPro%> "  alt="product image" class="product-detail-img">
+					<p class="product-detail-description" style= "font-size: 15px;">
+						<%= descriPro %> 
+					</p>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="product-detail-info">
+						<h2 class="product-detail-title" style = 'font-size:30px;'><%=  namePro %> </h2>
+						
+							<p class="product-detail-price small">
+								<span style="font-size: 15px; text-decoration:line-through; color:green;"> $<%= precioPro %> <span>
+								/
+								<% if(descuentoPro!=0){ %>
+								<b><%= descuentoPro %> % OFF</b>
+								<% }%> 
+							</p>
+							<p class="product-detail-price" style=" font-size: 35px;">
+								$<%= toThousand( precioConDescuento) %> 
+							</p>
+							<p class="product-detail-price" >
+							<!--$PRICE-->
+							</p>
+
+						<ul class="actions-list">
+							<li>
+								<i class="fas fa-credit-card"></i>
+								<p style="font-size: 15px;">Pagá en 12 cuotas sin interes</p>
+							</li>
+							<li>
+								<i class="fas fa-store"></i>
+								<p style="font-size: 15px;">Retiro gratis en locales del vendedor</p>
+							</li>
+						</ul>
+
+						<a href="#" class="buy-now-button" style="  height:40px; background-color: #3483fa;  border-radius:5px; font-size: 18px; width: 200px; text-align: center; margin-top: 3px; padding-top: 4px;  ">COMPRAR AHORA</a>
+						<hr>
+
+						
+						<form action="/products/delete/<%= idPro %> ?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete" style="font-size: 15px;background-color: crimson;">ELIMINAR</button>
+						</form>
+						
+						
+					   <a href="/products/edit/<%= idPro %> " class="action-button edit" style="border: solid 3px rgba(126, 212, 126, 0.767); font-size: 30px; border-radius:10px;  margin-top:5px; padding: 2px;">EDITAR PRODUCTO</a>
+						
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /product detail -->
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+
+</body>	
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include('partials/head', {title: 'crear un producto'}) %>
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/app.css">
+	<title>Mercado Liebre Argentina</title>
+</head>
+<body>
+	<!-- Header -->
+	<%- include('partials/header.ejs') %> 
+	<!-- /Header -->
+	
+
+
+
+     
+    <section>
+        <div class="titul">
+            <h1>Crear producto</h1>
+        </div>
+        <style>
+
+            .titul h1{margin-left: 30px;}
+        input{
+            
+    font-size: 15px;margin-right: 20px;background: transparent;height: 40px;border:none; border-bottom:solid 1px ; transition:.9s; ;  
+    }
+   
+input:hover{
+    border:none;
+    border-bottom:solid 3px #3883fa ;
+    
+   } 
+   form{display:flex;flex-wrap:wrap;flex-direction: column;  width: 30%;
+margin-left: 30px; 
+}
+
+  
+        </style>
+        <div class="formu">
+            <form action="/products/create" method="post" enctype="multipart/form-data">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ej:zapatillas Adidas">
+                <br>
+                <label for="descripcion">Descripcion:</label>
+                <input type="text" name="description" id="descripcion" placeholder="Ej: color negras ...">
+                <br>
+                <label for="precio">Precio:</label>
+                <input type="text" name="price" id="precio" placeholder="Ej: $2000">
+                <label for="descuento">Descuento:</label>
+                <br>
+                <input type="text" name="discount" id="descuento" placeholder="Ej: 20% OFF">
+                <label for="categoria">Categoria:</label>
+                <input type="text" name="category" id="categoria" placeholder="Ej: in-sale ">
+                <br>
+                <label for="foto">Imagen:</label>
+                <input type="file" name="image" id="imagen" placeholder="Imagen ">
+                <br>
+                <button type="submit">Crear Producto</button>
+            </form>
+        </div>
+    </section>
+    <!-- footer -->
+	<%- include('partials/footer.ejs') %> 
+</body>
+</html>
